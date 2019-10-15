@@ -88,25 +88,17 @@ $(document).ready(function()
 
     var arrX = [];
     var arrY = [];
+    
     var timer = null;
     function startProgramme() 
     {
         timer = setInterval(function() 
         {
-            
-            for (var i=0; i<arr.length; i++) 
-            {
-
-            }
-
-
 
             if (moveX == "right") 
             {
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#1eff00");
                 selectX++;
-                arrX.push(selectX);
-                arrY.push(selectY);
                 if (selectX == 15) selectX = 0;
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#0044ff");
             }
@@ -114,8 +106,6 @@ $(document).ready(function()
             {
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#1eff00");
                 selectX--;
-                arrX.push(selectX);
-                arrY.push(selectY);
                 if (selectX == -1) selectX = 14;
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#0044ff");
             }
@@ -123,8 +113,6 @@ $(document).ready(function()
             {
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#1eff00");
                 selectY++;
-                arrX.push(selectX);
-                arrY.push(selectY);
                 if (selectY == 15) selectY = 0;
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#0044ff");
             }
@@ -132,8 +120,6 @@ $(document).ready(function()
             {
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#1eff00");
                 selectY--;
-                arrX.push(selectX);
-                arrY.push(selectY);
                 if (selectY == -1) selectY = 14;
                 $('.y-'+selectY+' > .x-'+selectX).css("background", "#0044ff");
             }
@@ -142,7 +128,6 @@ $(document).ready(function()
             if (eat()) 
             {
                 $('.y-'+number_of_fruits_y+' > .x-'+number_of_fruits_x).css("background", "#ff1313");
-                length_of_snake++;
             }
 
         }, 170);
