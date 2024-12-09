@@ -16,10 +16,13 @@ image.onload = () => {
 }
 image.src = 'img/gameMap.png'
 
+const backgroundMusic = new Audio('audio/music.mp3'); 
+backgroundMusic.loop = true; 
+
 const enemies = []
 let enemyCount = 3
 let rounds = 1
-let hearts = 1000
+let hearts = 10
 let coins = 100
 const buildings = []
 let activeTile = undefined
@@ -152,6 +155,12 @@ canvas.addEventListener('click', (event) => {
         buildings.sort((a, b) => {
             return a.position.y - b.position.y
         })
+
+        if (backgroundMusic.paused) {
+            backgroundMusic.play().catch((error) => {
+                console.warn("Не удалось воспроизвести музыку:", error);
+            });
+        }
     }
 })
 
