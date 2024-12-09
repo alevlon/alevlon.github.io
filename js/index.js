@@ -18,7 +18,8 @@ image.src = 'img/gameMap.png'
 
 const enemies = []
 let enemyCount = 3
-let hearts = 10
+let rounds = 1
+let hearts = 1000
 let coins = 100
 const buildings = []
 let activeTile = undefined
@@ -79,7 +80,16 @@ function animate() {
         }
     }
 
+    document.querySelector("#rounds").innerHTML = rounds + "/5"
+
     if (enemies.length === 0) {
+        rounds++
+        console.log(rounds)
+        if (rounds > 5) {
+            rounds = 5
+            cancelAnimationFrame(game)
+            document.querySelector("#gameWin").style.display = 'flex'
+        }
         enemyCount += 2
         spawnEnemies(enemyCount)
     }
