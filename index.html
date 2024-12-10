@@ -12,7 +12,59 @@
         font-weight: 400;
         font-style: normal;
     }
+
+    #startScreen {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 1920px;
+        height: 1080px;
+        background-color: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        z-index: 10;
+    }
+
+    #startButton {
+        font-family: "Bungee Spice", cursive;
+        font-size: 48px;
+        font-weight: bold;
+        color: white;
+        background: linear-gradient(45deg, #ff8c00, #ff4500); 
+        border: none;
+        padding: 20px 50px;
+        cursor: pointer;
+        text-transform: uppercase;
+        border-radius: 15px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+        transition: transform 0.3s, box-shadow 0.3s;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); 
+    }
+
+    #startButton:hover {
+        transform: scale(1.1);
+        box-shadow: 0 12px 25px rgba(255, 69, 0, 0.6); 
+    }
+
+    #startButton:active {
+        transform: scale(0.95);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #title {
+        font-family: "Bungee Spice", cursive;
+        font-size: 48px;
+        color: white;
+    }
 </style>
+
+<div id="startScreen">
+    <h1 id="title">SPECIAL OPERATION</h1>
+    <button id="startButton">Розпочати гру</button>
+</div>
 
 <div style="position: relative; display: inline-block;">
     <canvas></canvas>
